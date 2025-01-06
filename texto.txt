@@ -1,0 +1,61 @@
+#############   GIT   #############   
+
+	Git es la Herramienta que nos permite tener un historial completo de todo el codigo que hemos desarroyado de nuestra app(Control de 	verciones)
+	Nos permite tener control de:
+		-historial
+		-almacenamiento de cod
+		-trabajar en equipo
+		-cuando se introdujo el error
+
+
+#Configuracion de git
+git config --global user.name "**** ***** ***** *****"
+git config --global user.email ***@gmail.com
+git config --global core.editor "code --wait" //configuramos el editor de codigo
+git config --global -e  // nos entrega un archivo de esta configuracion
+git config --global core.autocrlf true  // nos configura el CR(windows) y LF(ios)
+git config -h  //nos da un listado de funciones config
+
+
+#Comandos
+ls	// litado de carpetas
+pwd	// donde se encuentran
+cd <file>	// moverse a la carpeta
+cd ..	// salir de la carpeta
+mkdir nombre	// crea carpeta
+git init	// inicia un repositorio de git dentro de la carpeta
+git satatus	//estado del archivo
+git satatus -s	//estado del archivos implificado
+git add <file>	// agrega el archivo a etapa Stage
+git commit -m "Comentario"	//compromete los cambios tambien lo podemos solo escribir: git commit(haciendo el comentario manual por visual)
+rm <file>	// Nos borra un archivo(tenemos que guardar los cambios con git add y git commit)
+git rm <file>	// nos ahorra un paso borrando haciendo el git add
+git restore --staged <file>	// saca el archivo de la etapa de stage
+git restore <file>	// recuperamos archivos eliminados
+mv <file> <new_name_file>	// Con este comando podemos renombrar archivos (tenemos que guardar los cambios con git add y git commit)
+git diff	// Nos muestra los cambios hechos antes de comprometer los datos(commitiar)
+git log	//nos muestra el historial de commits
+git log --oneline	//nos muestra el historial de registros commits /salimos con "q"
+cat  <file>	// nos muestra el contenido del archivo 
+
+#GitIgnore
+.gitignore // Es una herramienta que nos ayuda a no comprmeter archivos que no queremos subir al repo 
+Ejemplo .env  node_modules/ etc...
+
+
+#Ramas
+	Cuando trabajamos en un codigo cada colaborador puede usar una rama distinta a la del trabajo inicial para despues mergear o mesclar con 		la rama principal(main)
+
+git branch		// nos idica en que rama estamos
+git checkout -b nombre	// nos crea una rama nueva
+
+	Una vez tengamos listo el codigo, en la rama principal(main) mergeamos la rama secundaria:
+
+git merge nuevaRama	// fusionamos ambas ramas 
+
+
+#Una vez creado el repo vamos a conectar con GitHub
+git remote add origin https://github.com/***/Git.git
+git push -u origin main
+
+ 
